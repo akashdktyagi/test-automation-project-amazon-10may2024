@@ -8,33 +8,33 @@ Module 2 named as: ```during-session``` will have the code which is not working 
 So always refer to the ```code-which-just-works``` module for the correct working code.
 
 ### Topics Covered: I intend to cover below topics during these sessions
-* [x] Basic Skeleton of the Framework [x]
-  * [ ] Dependencies
-    * [x] Lombok, AssertJ
-    * [x] Selenium, Cucumber, TestNG, Cucumber Picocontainer
-    * [ ] Extent Report, Log4j
-  * [x] Cucumber 
-    * [x] Feature file
-    * [x] Cucumber Hooks concept
-  * [x] Runner File
-  * [x] Dependency Injection with Picocontainer
-  * [x] Step Definitions
-  * [x] Page Object Model
-    * [x] Xpaths
-    * [ ] Xpaths axis advanced concept
-  * Properties File Configuration
-  * WebDriver manager Browser factory multi browser support
+*  Basic Skeleton of the Framework ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+  * Dependencies ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Lombok, AssertJ ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Selenium, Cucumber, TestNG, Cucumber Picocontainer ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Extent Report, Log4j ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  *  Cucumber ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Feature file ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Cucumber Hooks concept ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+  *  Runner File ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+  *  Dependency Injection with Picocontainer ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+  *  Step Definitions ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+  *  Page Object Model ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Xpaths ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Xpaths axis advanced concept ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  * Properties File Configuration ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  * WebDriver manager Browser factory multi browser support ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
   * 
 
 * Selenium Concepts:
-  * WebElements List of Web Elements, iterate over them
+  * WebElements List of Web Elements, iterate over them ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 
 * Cucumber Concepts:
-  * Cucumber Tags
-  * Runner File Cucumber Options
-  * Cucumber Hooks Before after and how to use them to capture screen shots for failures
-* Extent Report
-* Logging wirh Log 4j
-* Selenium Grid with Docker
-* Gitlab CI CD Pipeline and how to integrate the test pack with it
+  * Cucumber Tags ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  * Runner File Cucumber Options  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+  * Cucumber Hooks Before after and how to use them to capture screen shots for failures  ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+* Extent Report ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+* Logging wirh Log 4j ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+* Selenium Grid with Docker ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+* Gitlab CI CD Pipeline and how to integrate the test pack with it ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * 

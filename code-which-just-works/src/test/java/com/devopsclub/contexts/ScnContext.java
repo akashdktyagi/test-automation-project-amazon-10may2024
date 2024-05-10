@@ -5,7 +5,10 @@ import io.cucumber.java.Scenario;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import java.util.Properties;
 
@@ -44,6 +47,17 @@ public class ScnContext {
             properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
         } catch (Exception e) {
             e.printStackTrace();
+            Assert.fail("Failed to read config file");
+        }
+    }
+
+    public void takeScreenshotAndAttachWithReport() {
+        try {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "screenshot");
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Failed to take screenshot");
         }
     }
 
