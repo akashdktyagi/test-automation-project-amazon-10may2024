@@ -20,6 +20,7 @@ public class SearchStepDefs {
     @When("I search for {string}")
     public void i_search_for(String product) {
         commonPageObjects.searchProduct(product);
+        log.info("Searching for the product: "+product);
     }
 
     @Then("I should see a list of products that contain the word {string}")

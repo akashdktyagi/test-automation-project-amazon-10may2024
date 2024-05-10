@@ -53,6 +53,7 @@ public class CommonStepDefs {
     public void i_am_on_the_home_page() {
         scnContext.invokeDriver();
         scnContext.navigateBrowser(scnContext.getProperties().getProperty("app_url"));
+        log.info("Browser opened and navigated to the url: "+scnContext.getProperties().getProperty("app_url"));
     }
 
 

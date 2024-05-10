@@ -1,0 +1,16 @@
+2024-May-11 00:02:31 am [TestNG-PoolService-1] DEBUG com.devopsclub.contexts.ScnContext - Config file read successfully
+2024-May-11 00:02:35 am [TestNG-PoolService-1] INFO  com.devopsclub.core.BrowserFactory - Browser created successfully. browserName: chrome execType: local
+2024-May-11 00:02:35 am [TestNG-PoolService-1] INFO  com.devopsclub.contexts.ScnContext - Chrome browser Opened.
+2024-May-11 00:02:38 am [TestNG-PoolService-1] INFO  com.devopsclub.contexts.ScnContext - browser navigated: https://amazon.in
+2024-May-11 00:02:38 am [TestNG-PoolService-1] INFO  com.devopsclub.stepdefs.CommonStepDefs - Browser opened and navigated to the url: https://amazon.in
+2024-May-11 00:02:40 am [TestNG-PoolService-1] INFO  com.devopsclub.contexts.ScnContext - Screenshot taken and attached to report
+2024-May-11 00:02:40 am [TestNG-PoolService-1] DEBUG com.devopsclub.stepdefs.CommonStepDefs - Screenshot taken after each step.
+2024-May-11 00:02:42 am [TestNG-PoolService-1] INFO  com.devopsclub.po.CommonPageObjects - Searching for product: Iphone
+2024-May-11 00:02:42 am [TestNG-PoolService-1] INFO  com.devopsclub.stepdefs.SearchStepDefs - Searching for the product: Iphone
+2024-May-11 00:02:42 am [TestNG-PoolService-1] INFO  com.devopsclub.contexts.ScnContext - Screenshot taken and attached to report
+2024-May-11 00:02:42 am [TestNG-PoolService-1] DEBUG com.devopsclub.stepdefs.CommonStepDefs - Screenshot taken after each step.
+2024-May-11 00:02:43 am [TestNG-PoolService-1] INFO  com.devopsclub.po.CommonPageObjects - Search is successful
+2024-May-11 00:02:43 am [TestNG-PoolService-1] INFO  com.devopsclub.contexts.ScnContext - Screenshot taken and attached to report
+2024-May-11 00:02:43 am [TestNG-PoolService-1] DEBUG com.devopsclub.stepdefs.CommonStepDefs - Screenshot taken after each step.
+2024-May-11 00:02:43 am [TestNG-PoolService-1] INFO  com.devopsclub.contexts.ScnContext - Driver quit success
+2024-May-11 00:02:43 am [TestNG-PoolService-1] INFO  com.devopsclub.stepdefs.CommonStepDefs - Scenario: Search for products is completed. Browser Closed

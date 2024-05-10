@@ -1,5 +1,6 @@
 package com.devopsclub.po;
 
+import lombok.extern.log4j.Log4j2;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@Log4j2
 public class CommonPageObjects {
 
     WebDriver driver;
@@ -26,6 +28,7 @@ public class CommonPageObjects {
     public void searchProduct(String product) {
         driver.findElement(By.xpath(searchBox)).sendKeys(product);
         driver.findElement(By.xpath(searchSubmitButton)).click();
+        log.info("Searching for product: " + product);
     }
 
     public void checkIfSearchIsSuccessfull(String searchString) {
@@ -37,6 +40,7 @@ public class CommonPageObjects {
             }
         }
         Assertions.assertThat(true).isTrue();
+        log.info("Search is successful");
 
         //or simply do this
 //        Assertions.assertThat(listOfElements).allMatch(element -> element.getText().contains(searchString));

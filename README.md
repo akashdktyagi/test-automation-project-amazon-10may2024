@@ -33,8 +33,9 @@ So always refer to the ```code-which-just-works``` module for the correct workin
   * Cucumber Tags ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
   * Runner File Cucumber Options  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
   * Cucumber Hooks Before after and how to use them to capture screen shots for failures  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
-* Extent Report ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
-* Logging wirh Log 4j ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+* Extent Report  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
+  * NOTE: Read this article: https://ghchirp.site/3196/ 
+* Logging with Log 4j ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
 * Selenium Grid with Docker ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * Gitlab CI CD Pipeline and how to integrate the test pack with it ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * 
