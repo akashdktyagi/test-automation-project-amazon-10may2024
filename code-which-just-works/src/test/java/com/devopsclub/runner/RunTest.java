@@ -10,7 +10,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
         plugin = {"pretty",
                 "html:target/cucumber-reports/cucumber-pretty.html",
                 "json:target/cucumber-reports/CucumberTestReport.json",
-                "rerun:target/cucumber-reports/rerun.txt"},
+                "rerun:target/cucumber-reports/rerun.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
         monochrome = true,
         tags = "@smoke"
 )

@@ -32,7 +32,7 @@ So always refer to the ```code-which-just-works``` module for the correct workin
 * Cucumber Concepts:
   * Cucumber Tags ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
   * Runner File Cucumber Options  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-  * Cucumber Hooks Before after and how to use them to capture screen shots for failures  ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  * Cucumber Hooks Before after and how to use them to capture screen shots for failures  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
 * Extent Report ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * Logging wirh Log 4j ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * Selenium Grid with Docker ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
