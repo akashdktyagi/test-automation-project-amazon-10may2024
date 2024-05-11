@@ -15,17 +15,16 @@ So always refer to the ```code-which-just-works``` module for the correct workin
 *  Basic Skeleton of the Framework ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
   * Dependencies ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Lombok, AssertJ ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-    *  Selenium, Cucumber, TestNG, Cucumber Picocontainer ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-    *  Extent Report, Log4j ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+    *  Selenium, Cucumber, TestNG ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Cucumber ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Feature file ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Cucumber Hooks concept ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Runner File ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Dependency Injection with Picocontainer ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Step Definitions ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-    *  Page Object Model ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
+    *  Page Object Model ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
       *  Xpaths ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-      *  Xpaths axis advanced concept ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
+      *  Xpaths axis advanced concept ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
          * XPath Reference:
             * https://www.w3schools.com/xml/xpath_syntax.asp
             * Examples:
@@ -39,15 +38,15 @@ So always refer to the ```code-which-just-works``` module for the correct workin
 ----
 
 * Selenium Concepts:
-  * WebElements List of Web Elements, iterate over them ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  * WebElements List of Web Elements, iterate over them ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) 'Yet to Demonstrate'
 
 * Cucumber Concepts:
   * Cucumber Tags ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
   * Runner File Cucumber Options  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-  * Cucumber Hooks Before after and how to use them to capture screen shots for failures  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
-* Extent Report  ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
-  * NOTE: Read this article: https://ghchirp.site/3196/ 
-* Logging with Log 4j ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `TO SHOW`
+  * Cucumber Hooks Before after and how to use them to capture screen shots for failures  ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+* Extent Report  ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+  
+* Logging with Log 4j ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
 * Selenium Grid with Docker ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * Gitlab CI CD Pipeline and how to integrate the test pack with it ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 
