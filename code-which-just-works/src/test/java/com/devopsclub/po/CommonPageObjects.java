@@ -1,3 +1,6 @@
+
+
+
 package com.devopsclub.po;
 
 import lombok.extern.log4j.Log4j2;
@@ -9,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+//page_url=https://www.jetbrains.com
 @Log4j2
 public class CommonPageObjects {
 
@@ -21,7 +25,7 @@ public class CommonPageObjects {
 
     private final String searchCategoriesCheckbox = "//span[@class='a-size-base a-color-base' and text()='%s']/preceding-sibling::div/label/i";
 
-
+    private final String cartButton = "//*[@id='nav-cart']";
 
     public CommonPageObjects(WebDriver driver) {
         this.driver = driver;

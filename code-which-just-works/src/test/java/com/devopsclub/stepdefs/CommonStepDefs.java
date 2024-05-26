@@ -26,7 +26,7 @@ public class CommonStepDefs {
 
     @Before
     public void setUp(Scenario s){
-        this.scenario=s;
+        this.scenario = s;
         this.scnContext.setScenario(s);
     }
 

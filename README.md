@@ -1,7 +1,8 @@
 ## Test Automation Framework using Cucumber, Selenium, Java
 #### Features: Selenium Grid, Docker, Gitlab, CI CD Pipeline
 
-#### Note: 
+### Note: 
+
 ---
 
 This project is divided in to two modules. Module 1 named as: ```code-which-just-works``` will always have working code.
