@@ -1,6 +1,7 @@
 package devopsclub;
 
 
+import org.bson.assertions.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
