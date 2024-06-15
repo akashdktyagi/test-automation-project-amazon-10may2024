@@ -11,7 +11,6 @@ target/
 *.iws
 *.iml
 *.ipr
-.idea
 
 ### Eclipse ###
 .apt_generated
@@ -36,4 +35,5 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store!/app-info.log
+!/app_2024-05-11-00_02_31.log
