@@ -28,6 +28,10 @@ public class ScnContext {
 
     public ScnContext() {
         readConfig();
+
+        //Override the config.properties file with the system properties
+        properties.putAll(System.getProperties());
+        log.debug("New Properties: " + properties);
     }
 
     public void invokeDriver() throws MalformedURLException {

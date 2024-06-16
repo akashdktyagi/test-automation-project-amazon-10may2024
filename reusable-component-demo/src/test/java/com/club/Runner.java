@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
         monochrome = true,
         tags = ""
 )
-public class TestRunner extends AbstractTestNGCucumberTests{
+public class Runner extends AbstractTestNGCucumberTests{
 
     @Override
     @DataProvider(parallel = true)
