@@ -18,7 +18,9 @@ on:
 jobs:
   integration-test:
     runs-on: ubuntu-latest
+
     container: maven:3.8.1-openjdk-17
+
     services:
       selenium:
         image: selenium/standalone-chrome:latest
