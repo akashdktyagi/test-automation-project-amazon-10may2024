@@ -11,6 +11,7 @@
     <modules>
         <module>code-which-just-works</module>
         <module>during-session</module>
+        <module>reusable-component-demo</module>
     </modules>
 
     <properties>
@@ -18,5 +19,13 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.tdoc</groupId>
+            <artifactId>test-auto-reusable-component</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

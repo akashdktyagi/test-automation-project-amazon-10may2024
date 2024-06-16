@@ -39,7 +39,7 @@ So always refer to the ```code-which-just-works``` module for the correct workin
 ----
 
 * Selenium Concepts:
-  * WebElements List of Web Elements, iterate over them ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) 'Yet to Demonstrate'
+  * WebElements List of Web Elements, iterate over them ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
 
 * Cucumber Concepts:
   * Cucumber Tags ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
@@ -49,7 +49,18 @@ So always refer to the ```code-which-just-works``` module for the correct workin
   
 * Logging with Log 4j ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
 * Selenium Grid with Docker ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+  * If you are on windows and facing the error: 
+    * ```
+        Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:4442 -> 0.0.0.0:0: listen tcp 0.0.0.0:4442: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
+      ```
+    * then do this: https://superuser.com/questions/1604199/find-who-excluded-port-range
+      * Summarizing the steps: Run below. Make sure you open the powershell with admin rights else you will get access denied error.
+        *   ```shell
+            net stop winnat
+            net start winnat
+            ```
 * Gitlab CI CD Pipeline and how to integrate the test pack with it ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 
+* How to create a reusable maven library and use it in the project ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
 
 

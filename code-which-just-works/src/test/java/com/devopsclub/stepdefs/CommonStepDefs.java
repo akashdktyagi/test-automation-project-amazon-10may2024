@@ -6,10 +6,8 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import lombok.extern.log4j.Log4j2;
-
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 @Log4j2
@@ -24,10 +22,15 @@ public class CommonStepDefs {
         this.properties = scnContext.getProperties();
     }
 
-    @Before
+    @Before(order = 1)
     public void setUp(Scenario s){
         this.scenario = s;
         this.scnContext.setScenario(s);
+    }
+
+    @Before(order = 2)
+    public void invokeBrowserBeforeEachStep() throws MalformedURLException {
+        scnContext.invokeDriver();
     }
 
     @After
@@ -41,17 +44,20 @@ public class CommonStepDefs {
     }
 
     @AfterStep
-    public void shouldTakeScreenShotAfterEachStep(){
+    public void shouldTakeScreenShotAfterEachStep(Scenario scenario){
         if (properties.getProperty("screen_shot_strategy").equalsIgnoreCase("after_each_step")){
             scnContext.takeScreenshotAndAttachWithReport();
-            log.debug("Screenshot taken after each step.");
+            log.debug("Screenshot taken after  step");
         }
     }
 
+    @AfterStep
+    public void pauseAfterEachStep() throws InterruptedException {
+        Thread.sleep(Long.parseLong(properties.getProperty("pause_after_each_step_in_seconds")));
+    }
 
     @Given("I am on the home page")
-    public void i_am_on_the_home_page() {
-        scnContext.invokeDriver();
+    public void i_am_on_the_home_page() throws MalformedURLException {
         scnContext.navigateBrowser(scnContext.getProperties().getProperty("app_url"));
         log.info("Browser opened and navigated to the url: "+scnContext.getProperties().getProperty("app_url"));
     }

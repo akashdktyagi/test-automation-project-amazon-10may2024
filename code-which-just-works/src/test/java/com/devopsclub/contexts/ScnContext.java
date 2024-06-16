@@ -10,6 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 @Log4j2
@@ -29,8 +30,8 @@ public class ScnContext {
         readConfig();
     }
 
-    public void invokeDriver() {
-        this.driver = browserFactory.createInstance("chrome", "local");
+    public void invokeDriver() throws MalformedURLException {
+        this.driver = browserFactory.createInstance(properties.getProperty("browser_name"));
         this.driver.manage().window().maximize();
         log.info("Chrome browser Opened.");
     }

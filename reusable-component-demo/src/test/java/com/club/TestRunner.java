@@ -1,12 +1,12 @@
-package com.devopsclub.runner;
+package com.club;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        glue = {"com.devopsclub.stepdefs"},
+        glue = {"org.tdoc.stepdefs"},
         plugin = {"pretty",
                 "html:target/cucumber-reports/cucumber-pretty.html",
                 "json:target/cucumber-reports/CucumberTestReport.json",
@@ -16,7 +16,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
         monochrome = true,
         tags = ""
 )
-public class RunTest extends AbstractTestNGCucumberTests{
+public class TestRunner extends AbstractTestNGCucumberTests{
 
     @Override
     @DataProvider(parallel = true)

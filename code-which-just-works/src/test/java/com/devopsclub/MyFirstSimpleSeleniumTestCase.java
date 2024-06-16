@@ -80,42 +80,5 @@ public class MyFirstSimpleSeleniumTestCase {
         Assertions.assertThat(actualAmount).isEqualTo(totalAmountExpected);
 
 
-
-//        public void exampleOfFluentWait() {
-//            WebElement foo = driver.findElement(By.id("foo"));
-//            new FluentWait<WebElement>(foo)
-//                    .withTimeout(10, TimeUnit.SECONDS)
-//                    .pollingEvery(2, TimeUnit.SECONDS)
-//                    .until(new Function<WebElement, Boolean>() {
-//                        @Override
-//                        public Boolean apply(WebElement element) {
-//                            return element.getText().contains("foo");
-//                        }
-//                    });
-//        }
-
-
-//        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-//                .withTimeout(30, SECONDS)
-//                .pollingEvery(5, SECONDS)
-//                .ignoring(NoSuchElementException.class);
-//
-//        WebElement foo = wait.until(new Function<WebDriver, WebElement>()
-//        {
-//            public WebElement apply(WebDriver driver) {
-//                driver.findElement(By.id("foo"));
-//            }
-//        });
-
-
-
-
-
-
-
-
-
-
-
     }
 }
