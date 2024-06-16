@@ -42,7 +42,7 @@ jobs:
       if: always()
       with:
         name: cucumber-reports
-        path: |
-                code-which-just-works\target\cucumber-reports\cucumber-pretty.html
-                code-which-just-works\target\reports-extent
+        path: code-which-just-works/target/cucumber-reports/cucumber-pretty.html
+#                code-which-just-works\target\cucumber-reports\cucumber-pretty.html
+#                code-which-just-works\target\reports-extent
 
