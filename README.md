@@ -66,5 +66,5 @@ So always refer to the ```code-which-just-works``` module for the correct workin
        * https://www.testmo.com/guides/github-actions-selenium
        * https://docs.github.com/en/actions/using-containerized-services/about-service-containers 
 * [16/06/2024] How to create a reusable maven library and use it in the project ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
-
+* [16/06/2024] Centralizing Reporting with Elastic search, Log Stash and Kibana
 
