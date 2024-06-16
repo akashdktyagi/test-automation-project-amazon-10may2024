@@ -11,10 +11,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
                 "html:target/cucumber-reports/cucumber-pretty.html",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "com.devopsclub.listener.CucumberListener"
         },
         monochrome = true,
-        tags = ""
+        tags = "@google"
 )
 public class RunTest extends AbstractTestNGCucumberTests{
 

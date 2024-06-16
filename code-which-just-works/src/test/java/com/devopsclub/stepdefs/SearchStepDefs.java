@@ -24,7 +24,7 @@ public class SearchStepDefs {
         i_should_see_a_list_of_products_that_contain_the_word(productName);
     }
 
-    @When("I search for {string}")
+    @When("I search for {string} in top search bar")
     public void i_search_for(String product) {
         commonPageObjects.searchProduct(product);
         log.info("Searching for the product: " + product);
