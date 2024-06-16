@@ -23,9 +23,9 @@ So always refer to the ```code-which-just-works``` module for the correct workin
     *  Runner File ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Dependency Injection with Picocontainer ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
     *  Step Definitions ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-    *  Page Object Model ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+    *  Page Object Model ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
       *  Xpaths ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
-      *  Xpaths axis advanced concept ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+      *  Xpaths axis advanced concept ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
          * XPath Reference:
             * https://www.w3schools.com/xml/xpath_syntax.asp
             * Examples:
@@ -33,7 +33,7 @@ So always refer to the ```code-which-just-works``` module for the correct workin
               * ```//input[last() and contains(@value,'Feeling')]```
               * ```//textarea[@name='q']/sibling::div```
               * ```//span[@class='a-size-base a-color-base' and text()='%s']/preceding-sibling::div/label/i"```
-      * Properties File Configuration ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+      * Properties File Configuration ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
       * WebDriver manager Browser factory multi browser support ![#05ef1e](https://via.placeholder.com/15/05ef1e/000000?text=+) `Completed`
 
 ----
@@ -48,7 +48,7 @@ So always refer to the ```code-which-just-works``` module for the correct workin
 * Extent Report  ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
   
 * Logging with Log 4j ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
-* Selenium Grid with Docker ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
+* Selenium Grid with Docker ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
   * If you are on windows and facing the error: 
     * ```
         Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:4442 -> 0.0.0.0:0: listen tcp 0.0.0.0:4442: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
@@ -59,8 +59,9 @@ So always refer to the ```code-which-just-works``` module for the correct workin
             net stop winnat
             net start winnat
             ```
-* Gitlab CI CD Pipeline and how to integrate the test pack with it ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
-
+    * For Docker Compose run : ```docker-compose up --scale chrome=5``` .
+    * This will open 5 chrome instances. Navigate to: http://localhost:4444
+* Gitlab/Github CI CD Pipeline and how to integrate the test pack with it ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Pending
 * How to create a reusable maven library and use it in the project ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
 
 
