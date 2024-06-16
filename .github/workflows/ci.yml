@@ -43,6 +43,6 @@ jobs:
       with:
         name: cucumber-reports
         path: |
-                target\cucumber-reports\cucumber-pretty.html
-                target\reports**
+                code-which-just-works\target\cucumber-reports\cucumber-pretty.html
+                code-which-just-works\target\reports-extent
 
