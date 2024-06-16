@@ -48,7 +48,7 @@ So always refer to the ```code-which-just-works``` module for the correct workin
 * Extent Report  ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
   
 * Logging with Log 4j ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
-* Selenium Grid with Docker ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+* [16/06/2024] Selenium Grid with Docker ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
   * If you are on windows and facing the error: 
     * ```
         Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:4442 -> 0.0.0.0:0: listen tcp 0.0.0.0:4442: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
@@ -61,10 +61,10 @@ So always refer to the ```code-which-just-works``` module for the correct workin
             ```
     * For Docker Compose run : ```docker-compose up --scale chrome=5``` .
     * This will open 5 chrome instances. Navigate to: http://localhost:4444
-* Git-hub CI Pipeline and how to integrate the test pack with it ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+* [16/06/2024] Git-hub CI Pipeline and how to integrate the test pack with it ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
    * Use these links to know more:
        * https://www.testmo.com/guides/github-actions-selenium
        * https://docs.github.com/en/actions/using-containerized-services/about-service-containers 
-* How to create a reusable maven library and use it in the project ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
+* [16/06/2024] How to create a reusable maven library and use it in the project ![#1600f9](https://via.placeholder.com/15/1600f9/000000?text=+) `Yet to Demonstrate`
 
 

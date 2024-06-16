@@ -41,6 +41,8 @@ jobs:
       uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: target
-        path: target/
+        name: cucumber-reports
+        path: |
+                target\cucumber-reports\cucumber-pretty.html
+                target\reports**
 
