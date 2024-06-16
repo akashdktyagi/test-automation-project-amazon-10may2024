@@ -34,5 +34,5 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run UI Tests
-      run: mvn -B package --file pom.xml -Dbrowser_name=chrome_grid -Dgrid_url=http://selenium:4444
+      run: mvn -B package --file pom.xml -Dbrowser_name=chrome_grid -Dgrid_url=http://selenium:4444/wd/hub
 
