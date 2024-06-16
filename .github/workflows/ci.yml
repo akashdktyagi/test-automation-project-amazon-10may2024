@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: UI Tests with Selenium
 
 on:
   push:
@@ -34,5 +34,5 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run UI Tests
-      run: mvn -B package --file pom.xml -Dbrowser_name=chrome_grid -Dgrid_url=http://selenium:4444/wd/hub
+      run: mvn -B package --file pom.xml -Dbrowser_name=chrome_grid -Dgrid_url="http://selenium:4444/wd/hub"
 
