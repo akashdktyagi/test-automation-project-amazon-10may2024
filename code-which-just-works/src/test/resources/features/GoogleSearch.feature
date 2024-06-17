@@ -80,3 +80,28 @@ Feature: Test Google for various search terms
     When I search for "TestNG"
     Then the page title should start with "TestNG"
 
+
+  @xrayTest:JIRA-14
+  Scenario: Search for "Japan"
+    Given I open Google
+    When I search for "Japan"
+    Then the page title should start with "failed"
+
+  @xrayTest:JIRA-15
+  Scenario: Search for "India"
+    Given I open Google
+    When I search for "India"
+    Then the page title should start with "failed"
+
+  @xrayTest:JIRA-16
+  Scenario: Search for "Russia"
+    Given I open Google
+    When I search for "Russia"
+    Then the page title should start with "failed"
+
+  @xrayTest:JIRA-17
+  Scenario: Search for "SMU"
+    Given I open Google
+    When I search for "SMU"
+    Then the page title should start with "failed"
+

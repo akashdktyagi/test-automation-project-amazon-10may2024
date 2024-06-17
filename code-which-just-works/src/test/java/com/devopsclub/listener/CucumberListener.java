@@ -18,6 +18,7 @@ import org.elasticsearch.client.RestClient;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 
 @Log4j2
@@ -26,6 +27,7 @@ public class CucumberListener implements ConcurrentEventListener {
     ElasticsearchClient esClient;
 
     ScnContext scnContext = new ScnContext();
+    String xrayRunId = UUID.randomUUID().toString();
 
     private static final ThreadLocal<ElkCucumberReportSchema> elkCucumberReportSchema = ThreadLocal.withInitial(ElkCucumberReportSchema::new);
 //    ElkCucumberReportSchema elkCucumberReportSchema;
@@ -54,39 +56,39 @@ public class CucumberListener implements ConcurrentEventListener {
     }
 
     private void testCaseStarted(TestCaseStarted event){
-//        elkCucumberReportSchema = new ElkCucumberReportSchema();
-//        elkCucumberReportSchema.get().
-        elkCucumberReportSchema.get().setJiraId(getIssueId(event));
-        elkCucumberReportSchema.get().setScnId(getXrayTestID(event));
-        elkCucumberReportSchema.get().setScnName(event.getTestCase().getName());
-        elkCucumberReportSchema.get().setScnTags(event.getTestCase().getTags().toString());
-        elkCucumberReportSchema.get().setScnStartTimeStamp(event.getInstant().toString());
-        elkCucumberReportSchema.get().setExecutionEnv(scnContext.getProperties().getProperty("env"));
-
+        elkCucumberReportSchema.get().setRunId(xrayRunId);
+        elkCucumberReportSchema.get().setStoryId(getIssueId(event));
+        elkCucumberReportSchema.get().setXrayId(getXrayTestID(event));
+        elkCucumberReportSchema.get().setName(event.getTestCase().getName());
+        elkCucumberReportSchema.get().setTags(event.getTestCase().getTags().toString());
+        elkCucumberReportSchema.get().setStartTimeStamp(event.getInstant().toString());
+        elkCucumberReportSchema.get().setEnv(scnContext.getProperties().getProperty("env"));
+        elkCucumberReportSchema.get().setAppName(scnContext.getProperties().getProperty("appName"));
+        elkCucumberReportSchema.get().setRelease(scnContext.getProperties().getProperty("release"));
 
         log.debug("Test Case Started: " + event.getTestCase().getName());
     }
 
     private void testCaseFinish(TestCaseFinished event)  {
-        elkCucumberReportSchema.get().setScnSteps(getTestSteps(event));
-        elkCucumberReportSchema.get().setScnStatus(event.getResult().getStatus().toString());
-        elkCucumberReportSchema.get().setScnEndTimeStamp(event.getInstant().toString());
+        elkCucumberReportSchema.get().setSteps(getTestSteps(event));
+        elkCucumberReportSchema.get().setStatus(event.getResult().getStatus().toString());
+        elkCucumberReportSchema.get().setEndTimeStamp(event.getInstant().toString());
 
         log.debug("Test Case Finished: " + event.getTestCase().getName());
         log.debug(getTestCaseStepsWithStatusAndErrorLogs(event).toString());
 
 //        writeToFiles("results/"+event.getTestCase().getName()+".txt", getTestCaseStepsWithStatusAndErrorLogs(event).toString());
 
-        String indexName = "temp-cuke-ta-metrics-with-env-as-"
-                + scnContext.getProperties().getProperty("env") + "-"
-                + "release-"
-                + scnContext.getProperties().getProperty("releaseCycle");
+        String indexName = "cuke-ta-metrics";
+//                + scnContext.getProperties().getProperty("env") + "-"
+//                + "release-"
+//                + scnContext.getProperties().getProperty("releaseCycle");
 
         //Push to ElasticSearch
         try {
             IndexResponse response = esClient.index(i -> i
                     .index(indexName)
-                    .id(elkCucumberReportSchema.get().getScnId())
+//                    .id(elkCucumberReportSchema.get().getScnId())
                     .document(elkCucumberReportSchema.get())
             );
             log.info("ELK message sent successfully." + elkCucumberReportSchema + " to index: " + indexName+ " with response: " + response  );

@@ -10,17 +10,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ElkCucumberReportSchema {
+    String runId;
+    String env;
+    String appName;
+    String release;
 
-    String scnId;
-    String scnName;
-    String scnSteps;
-    String scnStatus;
-    String scnTags;
-    String executionEnv;
-    String scnEndTimeStamp;
-    String scnStartTimeStamp;
+    String name;
+    String steps;
+    String status;
+    String tags;
+    String startTimeStamp;
+    String endTimeStamp;
 
     //Jira details
-    String jiraId;
+    String storyId;
+    String xrayId;
+
+
 
 }
