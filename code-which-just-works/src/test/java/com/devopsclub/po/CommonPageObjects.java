@@ -34,12 +34,12 @@ public class CommonPageObjects {
     public void searchProduct(String product) {
         driver.findElement(By.xpath(searchBox)).sendKeys(product);
         driver.findElement(By.xpath(searchSubmitButton)).click();
-        log.info("Searching for product: " + product);
+        log.debug("Searching for product: " + product);
     }
 
     public void selectCategory(String category) {
         driver.findElement(By.xpath(String.format(searchCategoriesCheckbox, category))).click();
-        log.info("Selecting category: " + category);
+        log.debug("Selecting category: " + category);
     }
 
     public void checkIfSearchIsSuccessfull(String searchString) {
@@ -51,7 +51,7 @@ public class CommonPageObjects {
             }
         }
         Assertions.assertThat(true).isTrue();
-        log.info("Search is successful");
+        log.debug("Search is successful");
 
         //or simply do this
 //        Assertions.assertThat(listOfElements).allMatch(element -> element.getText().contains(searchString));

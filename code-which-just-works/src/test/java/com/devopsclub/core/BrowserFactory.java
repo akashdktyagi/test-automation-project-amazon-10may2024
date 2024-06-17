@@ -36,7 +36,7 @@ public class BrowserFactory {
             default:
                 Assert.fail("No Such Browser Avaialble.");
         }
-        log.info("Browser created successfully. browserName: " + browserName);
+        log.debug("Browser created successfully. browserName: " + browserName);
         return driver;
     }
 }

@@ -22,12 +22,13 @@ import java.util.List;
 
 @Log4j2
 public class CucumberListener implements ConcurrentEventListener {
-    RestClient restClient;
-    ElasticsearchTransport transport;
+
     ElasticsearchClient esClient;
 
     ScnContext scnContext = new ScnContext();
-    ElkCucumberReportSchema elkCucumberReportSchema = new ElkCucumberReportSchema();
+
+    private static final ThreadLocal<ElkCucumberReportSchema> elkCucumberReportSchema = ThreadLocal.withInitial(ElkCucumberReportSchema::new);
+//    ElkCucumberReportSchema elkCucumberReportSchema;
 
 
     @Override
@@ -44,39 +45,53 @@ public class CucumberListener implements ConcurrentEventListener {
         String elasticSearchHost = scnContext.getProperties().getProperty("elasticsearch.host");
         Integer elasticSearchPort = Integer.parseInt(scnContext.getProperties().getProperty("elasticsearch.port"));
 
-        restClient = RestClient.builder(new HttpHost(elasticSearchHost, elasticSearchPort)).build();
-        transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
+        RestClient restClient = RestClient.builder(new HttpHost(elasticSearchHost, elasticSearchPort)).build();
+        ElasticsearchTransport transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
         esClient = new ElasticsearchClient(transport);
-
 
         log.debug("Camel Context Started");
 
     }
 
     private void testCaseStarted(TestCaseStarted event){
-        elkCucumberReportSchema.setScnName(event.getTestCase().getName());
-        elkCucumberReportSchema.setScnTags(event.getTestCase().getTags().toString());
-        elkCucumberReportSchema.setScnStartTimeStamp(event.getInstant().toString());
+//        elkCucumberReportSchema = new ElkCucumberReportSchema();
+//        elkCucumberReportSchema.get().
+        elkCucumberReportSchema.get().setJiraId(getIssueId(event));
+        elkCucumberReportSchema.get().setScnId(getXrayTestID(event));
+        elkCucumberReportSchema.get().setScnName(event.getTestCase().getName());
+        elkCucumberReportSchema.get().setScnTags(event.getTestCase().getTags().toString());
+        elkCucumberReportSchema.get().setScnStartTimeStamp(event.getInstant().toString());
+        elkCucumberReportSchema.get().setExecutionEnv(scnContext.getProperties().getProperty("env"));
+
 
         log.debug("Test Case Started: " + event.getTestCase().getName());
     }
 
     private void testCaseFinish(TestCaseFinished event)  {
-        elkCucumberReportSchema.setScnSteps(getTestSteps(event));
-        elkCucumberReportSchema.setScnStatus(event.getResult().getStatus().toString());
-        elkCucumberReportSchema.setScnEndTimeStamp(event.getInstant().toString());
+        elkCucumberReportSchema.get().setScnSteps(getTestSteps(event));
+        elkCucumberReportSchema.get().setScnStatus(event.getResult().getStatus().toString());
+        elkCucumberReportSchema.get().setScnEndTimeStamp(event.getInstant().toString());
 
         log.debug("Test Case Finished: " + event.getTestCase().getName());
         log.debug(getTestCaseStepsWithStatusAndErrorLogs(event).toString());
-        writeToFiles("results/"+event.getTestCase().getName()+".txt", getTestCaseStepsWithStatusAndErrorLogs(event).toString());
+
+//        writeToFiles("results/"+event.getTestCase().getName()+".txt", getTestCaseStepsWithStatusAndErrorLogs(event).toString());
+
+        String indexName = "temp-cuke-ta-metrics-with-env-as-"
+                + scnContext.getProperties().getProperty("env") + "-"
+                + "release-"
+                + scnContext.getProperties().getProperty("releaseCycle");
 
         //Push to ElasticSearch
         try {
             IndexResponse response = esClient.index(i -> i
-                    .index("cucumber-test-reports")
-    //                .id(product.getSku())
-                    .document(elkCucumberReportSchema)
+                    .index(indexName)
+                    .id(elkCucumberReportSchema.get().getScnId())
+                    .document(elkCucumberReportSchema.get())
             );
+            log.info("ELK message sent successfully." + elkCucumberReportSchema + " to index: " + indexName+ " with response: " + response  );
+
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -87,6 +102,28 @@ public class CucumberListener implements ConcurrentEventListener {
 
         log.debug("Test Run Finished");
 
+    }
+
+    public String getIssueId(TestCaseStarted event){
+        String issueId = null;
+        List<String> tags = event.getTestCase().getTags();
+        for (String tag : tags){
+            if (tag.contains("@issue:")){
+                issueId = tag.split("@issue:")[1];
+            }
+        }
+        return issueId;
+    }
+
+    public String getXrayTestID(TestCaseStarted event){
+        String issueId = null;
+        List<String> tags = event.getTestCase().getTags();
+        for (String tag : tags){
+            if (tag.contains("@xrayTest:")){
+                issueId = tag.split("@xrayTest:")[1];
+            }
+        }
+        return issueId;
     }
 
     private String getTestSteps(TestCaseFinished event){
@@ -142,15 +179,15 @@ public class CucumberListener implements ConcurrentEventListener {
         return testStepListString;
     }
 
-    private void writeToFiles(String fileName, String content){
-        // Create a FileWriter object
-        try (FileWriter fileWriter = new FileWriter(fileName, false)) {
-            // Write the content to the file
-            fileWriter.write(content);
-            log.debug("File written successfully.");
-        } catch (IOException e) {
-            // Handle any I/O errors
-            System.err.println("An IOException was caught: " + e.getMessage());
-        }
-    }
+//    private void writeToFiles(String fileName, String content){
+//        // Create a FileWriter object
+//        try (FileWriter fileWriter = new FileWriter(fileName, false)) {
+//            // Write the content to the file
+//            fileWriter.write(content);
+//            log.debug("File written successfully.");
+//        } catch (IOException e) {
+//            // Handle any I/O errors
+//            System.err.println("An IOException was caught: " + e.getMessage());
+//        }
+//    }
 }

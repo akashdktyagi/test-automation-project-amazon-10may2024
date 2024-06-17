@@ -37,17 +37,17 @@ public class ScnContext {
     public void invokeDriver() throws MalformedURLException {
         this.driver = browserFactory.createInstance(properties.getProperty("browser_name"));
         this.driver.manage().window().maximize();
-        log.info("Chrome browser Opened.");
+        log.debug("Chrome browser Opened.");
     }
 
     public void navigateBrowser(String url) {
         this.driver.get(url);
-        log.info("browser navigated: " + url);
+        log.debug("browser navigated: " + url);
     }
 
     public void quitDriver() {
         this.driver.quit();
-        log.info("Driver quit success");
+        log.debug("Driver quit success");
     }
 
     public void readConfig() {
@@ -64,7 +64,7 @@ public class ScnContext {
         try {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "screenshot");
-            log.info("Screenshot taken and attached to report");
+            log.trace("Screenshot taken and attached to report");
         } catch (Exception e) {
             log.error("Failed to take screenshot");
             e.printStackTrace();

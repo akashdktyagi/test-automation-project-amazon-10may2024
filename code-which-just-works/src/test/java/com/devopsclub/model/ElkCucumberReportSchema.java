@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ElkCucumberReportSchema {
+
+    String scnId;
     String scnName;
     String scnSteps;
     String scnStatus;
@@ -17,4 +19,8 @@ public class ElkCucumberReportSchema {
     String executionEnv;
     String scnEndTimeStamp;
     String scnStartTimeStamp;
+
+    //Jira details
+    String jiraId;
+
 }

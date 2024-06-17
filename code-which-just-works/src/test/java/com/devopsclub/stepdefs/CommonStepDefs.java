@@ -40,7 +40,7 @@ public class CommonStepDefs {
             log.debug("Screenshot taken for the failed scenario: "+s.getName());
         }
         scnContext.quitDriver();
-        log.info("Scenario: "+s.getName()+" is completed. Browser Closed");
+        log.debug("Scenario: "+s.getName()+" is completed. Browser Closed");
     }
 
     @AfterStep
@@ -59,7 +59,7 @@ public class CommonStepDefs {
     @Given("I am on the home page")
     public void i_am_on_the_home_page() throws MalformedURLException {
         scnContext.navigateBrowser(scnContext.getProperties().getProperty("app_url"));
-        log.info("Browser opened and navigated to the url: "+scnContext.getProperties().getProperty("app_url"));
+        log.debug("Browser opened and navigated to the url: "+scnContext.getProperties().getProperty("app_url"));
     }
 
 
